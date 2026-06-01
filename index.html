@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sistem Untuk Guru by Cikgu heryanimukhair</title>
+    <meta
+      name="description"
+      content="Landing page jualan produk digital sistem guru oleh Cikgu heryanimukhair."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#utama" aria-label="Sistem Untuk Guru">
+        <span class="brand-mark">HG</span>
+        <span>
+          <strong>Sistem Untuk Guru</strong>
+          <small>by Cikgu heryanimukhair</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="#produk">Produk</a>
+        <a href="#bayaran">Bayaran</a>
+        <a href="#borang">Borang</a>
+        <a href="#admin">Admin</a>
+      </nav>
+    </header>
+
+    <main id="utama">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Produk digital untuk guru Malaysia</p>
+          <h1>SISTEM UNTUK GURU</h1>
+          <p class="lead">
+            Sistem Pendidikan, Google Sheet milik emel berdaftar, dan video
+            tutorial akan dihantar selepas pengesahan bayaran.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#borang">Isi Borang Pembelian</a>
+            <a class="button ghost" href="#produk">Lihat Produk</a>
+          </div>
+          <div class="notice">
+            Sistem akan dihantar melalui emel yang didaftarkan dalam tempoh
+            <strong>1-3 hari</strong>.
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="Ringkasan pakej pembelian">
+          <div class="mini-card">
+            <span>1</span>
+            <p>Sistem Pendidikan</p>
+          </div>
+          <div class="mini-card">
+            <span>2</span>
+            <p>Google Sheet owner emel berdaftar</p>
+          </div>
+          <div class="mini-card">
+            <span>3</span>
+            <p>Video tutorial penggunaan sistem</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="produk" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Senarai item</p>
+          <h2>Produk Digital Sistem Guru</h2>
+        </div>
+        <div id="productGrid" class="product-grid"></div>
+      </section>
+
+      <section id="bayaran" class="section payment-band">
+        <div class="payment-copy">
+          <p class="eyebrow">Maklumat bayaran</p>
+          <h2>Bayar ke akaun Maybank</h2>
+          <p>
+            Selesai bayaran, isi borang pembelian dan muat naik resit untuk
+            pengesahan tempahan.
+          </p>
+        </div>
+        <div class="account-box">
+          <span>MAYBANK</span>
+          <strong id="accountNumber">501114422550</strong>
+          <p>HERYANI BINTI MOHAMAD MUKHAIR</p>
+          <button class="button copy" id="copyAccountBtn" type="button">
+            Salin No Akaun
+          </button>
+          <p class="copy-status" id="copyStatus" role="status"></p>
+        </div>
+      </section>
+
+      <section id="borang" class="section form-section">
+        <div class="section-heading compact">
+          <p class="eyebrow">Borang pembelian</p>
+          <h2>Hantar maklumat tempahan</h2>
+          <p>
+            Pastikan emel aktif kerana pengesahan pembelian dan maklumat sistem
+            akan dihantar melalui emel tersebut.
+          </p>
+        </div>
+
+        <form id="purchaseForm" class="purchase-form">
+          <div class="form-grid">
+            <label>
+              Nama
+              <input name="nama" type="text" autocomplete="name" required />
+            </label>
+            <label>
+              Alamat Emel
+              <input name="emel" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              Nama Sekolah
+              <input name="sekolah" type="text" required />
+            </label>
+            <label>
+              No Telefon
+              <input name="telefon" type="tel" autocomplete="tel" required />
+            </label>
+          </div>
+
+          <fieldset>
+            <legend>Pilihan Item Pembelian</legend>
+            <p class="discount-note">
+              Tick satu atau lebih item. Diskaun 15% akan diberi secara automatik
+              untuk pembelian lebih daripada 1 item.
+            </p>
+            <div id="productChoices" class="choice-list"></div>
+          </fieldset>
+
+          <label class="upload-box">
+            <span>Muat Naik Resit Bayaran</span>
+            <input
+              id="receiptInput"
+              name="resit"
+              type="file"
+              accept="image/*,.pdf"
+              required
+            />
+            <small id="receiptName">Format imej atau PDF diterima.</small>
+          </label>
+
+          <div class="form-footer">
+            <div id="priceSummary" class="price-summary">
+              <p id="subtotalPrice">Subtotal: RM 0</p>
+              <p id="discountPrice">Diskaun: RM 0</p>
+              <p id="totalPrice" class="total-price">Jumlah: RM 0</p>
+            </div>
+            <button class="button primary" id="submitBtn" type="submit">
+              Hantar Borang Pembelian
+            </button>
+          </div>
+          <div id="formStatus" class="status-box" role="status"></div>
+        </form>
+      </section>
+
+      <section id="admin" class="section admin-section">
+        <div class="section-heading compact">
+          <p class="eyebrow">Admin</p>
+          <h2>Rekod pembelian</h2>
+          <p>Log masuk untuk melihat, mengemas kini dan memadam rekod tempahan.</p>
+        </div>
+
+        <form id="adminLogin" class="admin-login">
+          <label>
+            Kata Laluan Admin
+            <input id="adminPassword" type="password" autocomplete="current-password" required />
+          </label>
+          <button class="button dark" type="submit">Log Masuk Admin</button>
+        </form>
+
+        <div id="adminPanel" class="admin-panel" hidden>
+          <div class="admin-toolbar">
+            <button class="button ghost" id="refreshRecords" type="button">Muat Semula</button>
+            <button class="button ghost" id="logoutAdmin" type="button">Log Keluar</button>
+          </div>
+          <div id="adminStatus" class="status-box" role="status"></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tarikh</th>
+                  <th>Nama</th>
+                  <th>Emel</th>
+                  <th>Item</th>
+                  <th>Jumlah</th>
+                  <th>Status</th>
+                  <th>Tindakan</th>
+                </tr>
+              </thead>
+              <tbody id="recordsBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <dialog id="editDialog" class="modal">
+      <form id="editForm" method="dialog">
+        <h3>Kemas Kini Rekod</h3>
+        <input id="editId" type="hidden" />
+        <label>
+          Status
+          <select id="editStatus">
+            <option>Baru</option>
+            <option>Dalam Semakan</option>
+            <option>Disahkan</option>
+            <option>Telah Dihantar</option>
+            <option>Ditolak</option>
+          </select>
+        </label>
+        <label>
+          Nota Admin
+          <textarea id="editNota" rows="4"></textarea>
+        </label>
+        <div class="modal-actions">
+          <button class="button ghost" value="cancel" type="button" data-close-edit>Batal</button>
+          <button class="button primary" id="saveEdit" type="submit">Simpan</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="deleteDialog" class="modal danger">
+      <form id="deleteForm" method="dialog">
+        <h3>Padam Rekod?</h3>
+        <p id="deleteMessage">
+          Rekod ini akan dipadam daripada Google Sheet selepas disahkan.
+        </p>
+        <input id="deleteId" type="hidden" />
+        <div class="modal-actions">
+          <button class="button ghost" value="cancel" type="button" data-close-delete>Batal</button>
+          <button class="button danger-button" id="confirmDelete" type="submit">Padam</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="successDialog" class="modal success-modal">
+      <form method="dialog">
+        <div class="success-icon" aria-hidden="true">✓</div>
+        <h3>Pesanan Berjaya Diterima</h3>
+        <p>
+          Terima kasih. Pesanan anda sudah diterima dan emel pengesahan sudah
+          dihantar ke alamat emel yang didaftarkan.
+        </p>
+        <p>
+          Sila tunggu dalam tempoh <strong>1-3 hari</strong> untuk sistem
+          dihantar ke emel yang didaftarkan.
+        </p>
+        <p id="successOrderId" class="success-order"></p>
+        <div class="modal-actions">
+          <button class="button primary" type="submit">Baik, Terima Kasih</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
