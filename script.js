@@ -18,7 +18,7 @@ const products = [
     id: "analisis-pbd-sekolah",
     name: "Template Analisis PBD Sekolah",
     price: 40,
-    url: "https://rekodhafazandraft.my.canva.site/pbdcontohheryani",
+    url: "https://sites.google.com/moe-dl.edu.my/pbd-sk-contoh/analisispbdcontoh",
   },
   {
     id: "perekodan-pbd",
