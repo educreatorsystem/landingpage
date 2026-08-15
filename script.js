@@ -60,7 +60,7 @@ const products = [
     id: "smart-opr-generator",
     name: "SISTEM SMART OPR GENERATOR",
     price: 35,
-    url: "",
+    url: "https://sites.google.com/moe-dl.edu.my/oprskcontoh/opr-generator",
   },
   {
     id: "rakaman-gemini-canvas-ebook-prompt",
