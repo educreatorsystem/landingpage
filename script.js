@@ -57,6 +57,12 @@ const products = [
     url: "https://sites.google.com/moe-dl.edu.my/sk-taman-daya-pajsk-opr/opr-pajsk",
   },
   {
+    id: "smart-opr-generator",
+    name: "SISTEM SMART OPR GENERATOR",
+    price: 35,
+    url: "",
+  },
+  {
     id: "rakaman-gemini-canvas-ebook-prompt",
     name: "RAKAMAN KELAS MEMBINA SISTEM PENDIDIKAN GEMINI CANVAS+ E-BOOK KOLEKSI PROMPT SISTEM PENDIDIKAN",
     price: 35,
