@@ -521,6 +521,18 @@ input[type="checkbox"] {
   text-decoration: underline;
 }
 
+.system-link.unavailable,
+.choice-link.unavailable {
+  color: var(--muted);
+  background: rgba(102, 112, 133, 0.12);
+  cursor: default;
+  text-decoration: none;
+}
+
+.choice-link.unavailable {
+  background: transparent;
+}
+
 .upload-box {
   padding: 16px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(66, 189, 232, 0.11));

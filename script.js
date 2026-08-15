@@ -50,6 +50,18 @@ const products = [
     price: 35,
     url: "https://heryanimukhair95-bit.github.io/rewardboard-contoh/",
   },
+  {
+    id: "pajsk-opr",
+    name: "SISTEM PENGURUSAN PAJSK+OPR",
+    price: 50,
+    url: "https://sites.google.com/moe-dl.edu.my/sk-taman-daya-pajsk-opr/opr-pajsk",
+  },
+  {
+    id: "rakaman-gemini-canvas-ebook-prompt",
+    name: "RAKAMAN KELAS MEMBINA SISTEM PENDIDIKAN GEMINI CANVAS+ E-BOOK KOLEKSI PROMPT SISTEM PENDIDIKAN",
+    price: 35,
+    url: "",
+  },
 ];
 
 const state = {
@@ -99,7 +111,11 @@ function renderProducts() {
             <h3>${product.name}</h3>
             <p class="price">${money(product.price)}</p>
           </div>
-          <a class="system-link" href="${product.url}" target="_blank" rel="noopener">Lihat Sistem</a>
+          ${
+            product.url
+              ? `<a class="system-link" href="${product.url}" target="_blank" rel="noopener">Lihat Sistem</a>`
+              : `<span class="system-link unavailable">Link akan dikemaskini</span>`
+          }
         </article>
       `,
     )
@@ -114,7 +130,11 @@ function renderProducts() {
             <strong>${product.name}</strong>
             <small>${money(product.price)}</small>
           </span>
-          <a class="choice-link" href="${product.url}" target="_blank" rel="noopener">Lihat Sistem</a>
+          ${
+            product.url
+              ? `<a class="choice-link" href="${product.url}" target="_blank" rel="noopener">Lihat Sistem</a>`
+              : `<span class="choice-link unavailable">Link akan dikemaskini</span>`
+          }
         </label>
       `,
     )
