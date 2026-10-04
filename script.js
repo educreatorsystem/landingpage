@@ -68,6 +68,18 @@ const products = [
     price: 35,
     url: "",
   },
+  {
+    id: "opr-plc",
+    name: "SISTEM OPR PLC",
+    price: 40,
+    url: "https://sites.google.com/moe-dl.edu.my/educreatorlandingpage/opr-plc",
+  },
+  {
+    id: "takwim-persekolahan-2027",
+    name: "TAKWIM PERSEKOLAHAN 2027",
+    price: 50,
+    url: "https://educreatorsystem.github.io/sistemtakwimsksungaitiram2026/",
+  },
 ];
 
 const state = {
@@ -93,7 +105,16 @@ const successDialog = document.querySelector("#successDialog");
 const successOrderId = document.querySelector("#successOrderId");
 
 function money(value) {
-  return `RM ${Number(value || 0).toLocaleString("ms-MY")}`;
+  const amount = Number(value || 0);
+  const hasCents = !Number.isInteger(amount);
+  return `RM ${amount.toLocaleString("ms-MY", {
+    minimumFractionDigits: hasCents ? 2 : 0,
+    maximumFractionDigits: 2,
+  })}`;
+}
+
+function productPrice(product) {
+  return Number.isFinite(product.price) ? money(product.price) : "Harga akan dikemaskini";
 }
 
 function priceBreakdown(chosen) {
@@ -115,7 +136,7 @@ function renderProducts() {
         <article class="product-card">
           <div>
             <h3>${product.name}</h3>
-            <p class="price">${money(product.price)}</p>
+            <p class="price${Number.isFinite(product.price) ? "" : " pending-price"}">${productPrice(product)}</p>
           </div>
           ${
             product.url
@@ -130,11 +151,11 @@ function renderProducts() {
   productChoices.innerHTML = products
     .map(
       (product) => `
-        <label class="choice-item" for="item-${product.id}">
-          <input id="item-${product.id}" type="checkbox" name="items" value="${product.id}" data-price="${product.price}" />
+        <label class="choice-item${Number.isFinite(product.price) ? "" : " choice-disabled"}" for="item-${product.id}">
+          <input id="item-${product.id}" type="checkbox" name="items" value="${product.id}" data-price="${product.price ?? ""}" ${Number.isFinite(product.price) ? "" : "disabled"} />
           <span class="choice-copy">
             <strong>${product.name}</strong>
-            <small>${money(product.price)}</small>
+            <small>${productPrice(product)}</small>
           </span>
           ${
             product.url
