@@ -6,78 +6,91 @@ const products = [
     id: "analisis-markah-sk",
     name: "Template Sistem Analisis Markah (SK)",
     price: 40,
+    image: "assets/products/analisis-markah-sk.png",
     url: "https://sites.google.com/moe-dl.edu.my/sk-contoh/analisis-markah-sk",
   },
   {
     id: "analisis-markah-smk",
     name: "Template Sistem Analisis Markah (SMK)",
     price: 40,
+    image: "assets/products/analisis-markah-smk.png",
     url: "https://sites.google.com/moe-dl.edu.my/smk-contoh/smkcontoh",
   },
   {
     id: "analisis-pbd-sekolah",
     name: "Template Analisis PBD Sekolah",
     price: 40,
+    image: "assets/products/analisis-pbd-sekolah.png",
     url: "https://sites.google.com/moe-dl.edu.my/pbd-sk-contoh/analisispbdcontoh",
   },
   {
     id: "perekodan-pbd",
     name: "Template Perekodan PBD",
-    price: 40,
+    price: 30,
+    image: "assets/products/perekodan-pbd.png",
     url: "https://heryanimukhair95-bit.github.io/PEREKODAN-PBD-CONTOH/",
   },
   {
     id: "rekod-penghantaran-tugasan",
     name: "Template rekod penghantaran tugasan dan buku kerja",
-    price: 35,
+    price: 30,
+    image: "assets/products/rekod-tugasan-buku-kerja.png",
     url: "https://heryanimukhair95-bit.github.io/SEMAKAN-BUKU-KERJA-DAN-TUGASAN/",
   },
   {
     id: "carian-id-delima",
     name: "TEMPLATE CARIAN ID DELIMA",
     price: 20,
+    image: "assets/products/carian-id-delima.png",
     url: "https://rekodhafazandraft.my.canva.site/c92sh2cpkd06wkcn",
   },
   {
     id: "carian-unit-kokurikulum",
     name: "SISTEM CARIAN UNIT KOKURIKULUM",
-    price: 35,
+    price: 30,
+    image: "assets/products/carian-unit-kokurikulum.png",
     url: "https://rekodhafazandraft.my.canva.site/sistem-carianunitkokosdaya",
   },
   {
     id: "reward-board",
     name: "REWARD BOARD",
     price: 35,
+    image: "assets/products/reward-board.png",
     url: "https://heryanimukhair95-bit.github.io/rewardboard-contoh/",
   },
   {
     id: "pajsk-opr",
     name: "SISTEM PENGURUSAN PAJSK+OPR",
     price: 50,
+    image: "assets/products/pajsk-opr.png",
     url: "https://sites.google.com/moe-dl.edu.my/sk-taman-daya-pajsk-opr/opr-pajsk",
   },
   {
     id: "smart-opr-generator",
     name: "SISTEM SMART OPR GENERATOR",
     price: 35,
+    image: "assets/products/smart-opr-generator.png",
     url: "https://sites.google.com/moe-dl.edu.my/oprskcontoh/opr-generator",
   },
   {
     id: "rakaman-gemini-canvas-ebook-prompt",
     name: "RAKAMAN KELAS MEMBINA SISTEM PENDIDIKAN GEMINI CANVAS+ E-BOOK KOLEKSI PROMPT SISTEM PENDIDIKAN",
     price: 35,
+    image: "assets/products/gemini-ebook-prompt.png",
     url: "",
   },
   {
     id: "opr-plc",
     name: "SISTEM OPR PLC",
     price: 40,
+    image: "assets/products/opr-plc.png",
     url: "https://sites.google.com/moe-dl.edu.my/educreatorlandingpage/opr-plc",
   },
   {
     id: "takwim-persekolahan-2027",
     name: "TAKWIM PERSEKOLAHAN 2027",
     price: 50,
+    image: "assets/products/takwim-2027.png",
     url: "https://educreatorsystem.github.io/sistemtakwimsksungaitiram2026/",
   },
 ];
@@ -134,9 +147,12 @@ function renderProducts() {
     .map(
       (product) => `
         <article class="product-card">
+          <div class="product-visual">
+            <img src="${product.image}" alt="${product.name}" loading="lazy" />
+          </div>
           <div>
             <h3>${product.name}</h3>
-            <p class="price${Number.isFinite(product.price) ? "" : " pending-price"}">${productPrice(product)}</p>
+            <p class="price${Number.isFinite(product.price) ? "" : " pending-price"}"><span>Harga</span>${productPrice(product)}</p>
           </div>
           ${
             product.url
